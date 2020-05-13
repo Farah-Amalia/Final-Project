@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+<html>
+    <head>
+    </head>
+    <body>
+    {% block body %}
+    <div class="container pt 5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-3">
+                <h3> Fill This Form to Predict:</h3>
+                <form action="/" method="POST">
+                    <!-- Age -->
+                    <input type="number" name="age" placeholder="Age" class="form-control form-control-sm mt-2">                    
+                    <!-- Job -->
+                    <select class="form-control form-control-sm" name="job" >
+                        <option value="" disabled selected>Select Job</option>
+                        {% for item in data_job%}
+                            <option value="{{item}}"> {{item}}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- Marital -->
+                    <select class="form-control form-control-sm" name="marital" >
+                        <option value="" disabled selected>Select Marital Status</option>
+                        {% for item in data_marital%}
+                            <option value="{{item}}"> {{item}}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- Educaton -->
+                    <select class="form-control form-control-sm" name="education" >
+                        <option value="" disabled selected>Select Education Level</option>
+                        {% for item in data_education%}
+                            <option value="{{item}}"> {{item}}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- Default -->
+                    <select class="form-control form-control-sm" name="default" >
+                        <option value="" disabled selected>Has credit in default?</option>
+                        {% for item in data_default%}
+                            <option value="{{item}}"> {{item}}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- Housing -->
+                    <select class="form-control form-control-sm" name="housing" >
+                        <option value="" disabled selected>Has housing loan?</option>
+                        {% for item in data_default%}
+                            <option value="{{item}}"> {{item}}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- Loan -->
+                    <select class="form-control form-control-sm" name="loan" >
+                        <option value="" disabled selected>Has personal loan?</option>
+                        {% for item in data_default%}
+                            <option value="{{item}}"> {{item}}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- Contact -->
+                    <select class="form-control form-control-sm" name="contact" >
+                        <option value="" disabled selected>Contact Type</option>
+                        <option value="cellular">cellular</option>
+                        <option value="telephone">telephone</option>
+                    </select>
+                    <!-- Month -->
+                    <select class="form-control form-control-sm" name="month" >
+                        <option value="" disabled selected>Last contact month</option>
+                        {% for item in data_month%}
+                            <option value="{{item}}"> {{item}}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- Day -->
+                    <select class="form-control form-control-sm" name="day_of_week" >
+                        <option value="" disabled selected>Last contact day of week</option>
+                        {% for item in data_day%}
+                            <option value="{{item}}"> {{item}}</option>
+                        {% endfor %}
+                    </select>                      
+                    <!-- Campaign -->
+                    <input type="number" name="campaign" placeholder="Number of contacts performed during campaign" class="form-control form-control-sm mt-2">
+                    <!-- Pdays -->
+                    <input type="number" name="pdays" placeholder="Number of  days after the client was last contacted " class="form-control form-control-sm mt-2">
+                    <!-- Previous -->
+                    <input type="number" name="previous" placeholder="Number of contacts performed before campaign" class="form-control form-control-sm mt-2">
+                    <!-- Poutcome -->
+                    <select class="form-control form-control-sm" name="poutcome" >
+                        <option value="" disabled selected>Previous Outcome</option>
+                        <option value="failure">failure</option>
+                        <option value="nonexistent">nonexistent</option>
+                        <option value="success">success</option>
+                    </select>
+                    <!-- Employment Variation Rate -->
+                    <input type="number" name="emp.var.rate" placeholder="Employment Variation Rate" class="form-control form-control-sm mt-2">
+                    <!-- Consumer Price Index -->
+                    <input type="number" name="cons.price.index" placeholder="Consumer Price Index" class="form-control form-control-sm mt-2">
+                    <!-- Customer Confidence Index -->
+                    <input type="number" name="cons.conf.index" placeholder="Consumer Confidence Index" class="form-control form-control-sm mt-2">
+                    <!-- Euribor 3 month rate -->
+                    <input type="number" name="euribor3m" placeholder="Euribor 3 month rate" class="form-control form-control-sm mt-2">
+                    <!-- Number of Employees -->
+                    <input type="number" name="nr.employed" placeholder="Number of Employees" class="form-control form-control-sm mt-2">
+                    <button type="submit" class="btn btn-success mt-4">Predict</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        
+    {% endblock body %}
+    </body>
+</html>
