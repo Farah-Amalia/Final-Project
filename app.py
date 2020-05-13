@@ -2,6 +2,7 @@ from flask import Flask,render_template,request
 from data import job, marital, education, default, day, month
 from prediction import prediction
 from cleaning_data import data_bankmarketing
+from plots import feature_plots
 
 ## translate Flask to python object
 app = Flask(__name__)
@@ -11,9 +12,6 @@ def index_prediction():
     if request.method == "POST":
         data = request.form
         data = data.to_dict()
-        # data['Rooms'] = int(data['Rooms'])
-        # data['Bathrooms'] = int(data['Bathrooms'])
-        # data['Size Num'] = int(data['Size Num'])
         hasil = prediction(data)
         return render_template('result.html', hasil_prediction=hasil)
     return render_template('prediction.html',
@@ -29,6 +27,12 @@ def index_prediction():
 def data():
     data = data_bankmarketing()
     return render_template('table_data.html', data=data)
+
+@app.route('/plots')
+def plots():
+    data1 = feature_plots()
+    data2 = feature_plots()
+    return render_template('plots.html', data1=data1, data2=data2)
 
 @app.route('/about')
 def about():
