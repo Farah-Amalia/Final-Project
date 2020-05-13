@@ -2,8 +2,140 @@
 
 {% block body %}
     <div class="container pt 5">
-        <div class="row justify-content">
-            <div>The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be ('yes') or not ('no') subscribed.</div>
+        <br>
+        <br>
+        <h4>About this project</h4>
+        <div>Bank marketing prediction is a data science project as one of requirements to graduate from Purwadhika Startup and Coding School.
+            This project aims to find the best machine learning model to classify the target. For further questions or suggestions, feel free to contact me at farahfajrinaamalia@gmail.com
         </div>
+        <br>
+        <br>
+        <h4>The Model</h4>
+        <div>The model used is Random Forest Classifier with some hyperparameters tuning. This model was choosen for its higher score among others 
+            (Accuracy = 88%, AUC = 76%, Precision = 46%)
+        </div>
+        <br>
+        <br>
+        <h4>Data Overview</h4>
+        <div>The data is taken from UCI Machine Learning Repository. The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be ('yes') or not ('no') subscribed.</div>
+        <br>
+        <br>
+        <h4>Data Features</h4>
+        <table class="table table-bordered table-sm table-striped table-hover table-light">
+            <thead>
+              <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Column Name</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>age</td>
+                <td>(numeric)</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>job</td>
+                <td>type of job (categorical: 'admin.','blue-collar','entrepreneur','housemaid','management','retired','self-employed','services','student','technician','unemployed','unknown')</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>marital</td>
+                <td>marital status (categorical: 'divorced','married','single','unknown'; note: 'divorced' means divorced or widowed)</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>education</td>
+                <td>(categorical: 'basic.4y','basic.6y','basic.9y','high.school','illiterate','professional.course','university.degree','unknown')</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>default</td>
+                <td>has credit in default? (categorical: 'no','yes','unknown')</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>housing</td>
+                <td>has housing loan? (categorical: 'no','yes','unknown')</td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>loan</td>
+                <td>has personal loan? (categorical: 'no','yes','unknown')</td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>contact</td>
+                <td>contact communication type (categorical: 'cellular','telephone')</td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>month</td>
+                <td>last contact month of year (categorical: 'jan', 'feb', 'mar', ..., 'nov', 'dec')</td>
+              </tr>
+              <tr>
+                <th scope="row">10</th>
+                <td>day_of_week</td>
+                <td>last contact day of the week (categorical: 'mon','tue','wed','thu','fri')</td>
+              </tr>
+              <tr>
+                <th scope="row">11</th>
+                <td>duration</td>
+                <td>last contact duration, in seconds (numeric)</td>
+              </tr>
+              <tr>
+                <th scope="row">12</th>
+                <td>campaign</td>
+                <td>number of contacts performed during this campaign and for this client (numeric, includes last contact)</td>
+              </tr>
+              <tr>
+                <th scope="row">13</th>
+                <td>pdays</td>
+                <td>number of days that passed by after the client was last contacted from a previous campaign (numeric; 999 means client was not previously contacted)</td>
+              </tr>
+              <tr>
+                <th scope="row">14</th>
+                <td>previous</td>
+                <td>number of contacts performed before this campaign and for this client (numeric)</td>
+              </tr>
+              <tr>
+                <th scope="row">15</th>
+                <td>poutcome</td>
+                <td>outcome of the previous marketing campaign (categorical: 'failure','nonexistent','success')</td>
+              </tr>
+              <tr>
+                <th scope="row">16</th>
+                <td>emp.var.rate</td>
+                <td>employment variation rate - quarterly indicator (numeric)</td>
+              </tr>
+              <tr>
+                <th scope="row">17</th>
+                <td>cons.price.idx</td>
+                <td>consumer price index - monthly indicator (numeric)</td>
+              </tr>
+              <tr>
+                <th scope="row">18</th>
+                <td>euribor3m</td>
+                <td>euribor 3 month rate - daily indicator (numeric)</td>
+              </tr>
+              <tr>
+                <th scope="row">19</th>
+                <td>cons.conf.idx</td>
+                <td>consumer confidence index - monthly indicator (numeric)</td>
+              </tr>
+              <tr>
+                <th scope="row">20</th>
+                <td>nr.employed</td>
+                <td>number of employees - quarterly indicator (numeric)</td>
+              </tr>
+              <tr>
+                <th scope="row">21</th>
+                <td>y</td>
+                <td>has the client subscribed a term deposit? (binary: 'yes','no')</td>
+              </tr>
+            </tbody>
+          </table>
     </div>
 {% endblock body %}
