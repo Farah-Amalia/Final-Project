@@ -34,13 +34,13 @@ Based on Precision Score and Accuracy Score, the top 3 models are:
 ## IV. Hypermarameters Tuning
 ### 1. MLP Classifier
 Below are the hyperparameters of MLPClassifier that I have tuned.
-'''
+```
 'hidden_layer_sizes': [(50,50,50), (50,100,50), (100,)],
 'activation': ['tanh', 'relu', 'logistic'],
 'solver': ['sgd', 'adam', 'lbfgs'],
 'alpha': [0.05, 0.06, 0.07, 0.08, 0.09, 0.1],
 'learning_rate': ['constant','adaptive']
-'''
+```
 From the hyperparameter tuning, below are the results of classification report.
 | Model | Precision | Recall | Accuracy |
 | ----- | ----- | ----- | ----- |
@@ -48,12 +48,13 @@ From the hyperparameter tuning, below are the results of classification report.
 
 ### 2. Random Forest Classifier
 Below are the hyperparameters of MLPClassifier that I have tuned.
-'''
+```
 'max_depth':[10,20,30,40,50,],
 'min_samples_split':[1,2,3,4,5,6,7,8,9,10,50,100,500],
 'min_samples_leaf': [0.1,1,2,3,4,5,500,1000,1500,2000,2500,3000,3500,4000],
 'n_estimators': [1, 100, 500, 800, 1500]
-'''
+```
+
 From the hyperparameter tuning, below are the results of classification report.
 | Model | Precision | Recall | Accuracy |
 | ----- | ----- | ----- | ----- |
